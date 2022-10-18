@@ -3,7 +3,7 @@ use dialoguer::Input;
 
 fn main() {
     loop {
-        let mut operator = String::new();
+        //let mut operator = String::new();
 
         let first_number: String = Input::new()
                                     .with_prompt("Enter your first number")
@@ -13,20 +13,32 @@ fn main() {
             Ok(num) => num,
             Err(_) => continue,
         };
-
-        println!(
-"Choose an operation:
-1 - add
-2 - subtract
-3 - multiply
-4 - divide
-> "
-        );
-        io::stdin()
-            .read_line(&mut operator)
-            .expect("Failed to read line");
+        
+        let operator: String = Input::new()
+                            .with_prompt(
+                                concat!(
+                                    "Choose an operation:\n",
+                                    "1 - add\n",
+                                    "2 - subtract\n",
+                                    "3 - multiply\n",
+                                    "4 - divide\n",
+                                )
+                            )
+                            .interact()
+                            .expect("Failed to read input");
+//        println!(
+//"Choose an operation:
+//1 - add
+//2 - subtract
+//3 - multiply
+//4 - divide
+//> "
+//        );
+//        io::stdin()
+//            .read_line(&mut operator)
+//            .expect("Failed to read line");
         let operator: &str = operator.trim();
-
+//
         let second_number: String = Input::new()
                                     .with_prompt("Enter your second number")
                                     .interact()
