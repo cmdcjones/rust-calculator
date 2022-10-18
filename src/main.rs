@@ -1,15 +1,16 @@
 use std::io;
+use dialoguer::Input;
 
 fn main() {
     loop {
-        let mut first_number = String::new();
+        let first_number = String::new();
         let mut second_number = String::new();
         let mut operator = String::new();
 
-        println!("Enter your first number:\n> ");
-        io::stdin()
-            .read_line(&mut first_number)
-            .expect("Failed to read line");
+        let first_number: String = Input::new()
+                                    .with_prompt("Enter your first number")
+                                    .interact()
+                                    .expect("Failed to read input");
         let first_number: f32 = match first_number.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
