@@ -38,16 +38,16 @@ fn main() {
 
         if operator == "1" {
             let result = &first_number + &second_number;
-            println!("{} + {} = {}", first_number, second_number, result);
+            println!("{:.2} + {:.2} = {:.2}", first_number, second_number, result);
         } else if operator == "2" {
             let result = &first_number - &second_number;
-            println!("{} - {} = {}", first_number, second_number, result);
+            println!("{:.2} - {:.2} = {:.2}", first_number, second_number, result);
         } else if operator == "3" {
             let result = &first_number * &second_number;
-            println!("{} * {} = {}", first_number, second_number, result);
+            println!("{:.2} * {:.2} = {:.2}", first_number, second_number, result);
         } else if operator == "4" {
             let result = &first_number / &second_number;
-            println!("{} / {} = {}", first_number, second_number, result);
+            println!("{:.2} / {:.2} = {:.2}", first_number, second_number, result);
         }
 
     }
