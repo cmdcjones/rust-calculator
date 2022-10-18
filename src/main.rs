@@ -3,8 +3,6 @@ use dialoguer::Input;
 
 fn main() {
     loop {
-        let first_number = String::new();
-        let mut second_number = String::new();
         let mut operator = String::new();
 
         let first_number: String = Input::new()
@@ -29,10 +27,10 @@ fn main() {
             .expect("Failed to read line");
         let operator: &str = operator.trim();
 
-        println!("Enter your second number:\n> ");
-        io::stdin()
-            .read_line(&mut second_number)
-            .expect("Failed to read line");
+        let second_number: String = Input::new()
+                                    .with_prompt("Enter your second number")
+                                    .interact()
+                                    .expect("Failed to read input");
         let second_number: f32 = match second_number.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
