@@ -26,19 +26,8 @@ fn main() {
                             )
                             .interact()
                             .expect("Failed to read input");
-//        println!(
-//"Choose an operation:
-//1 - add
-//2 - subtract
-//3 - multiply
-//4 - divide
-//> "
-//        );
-//        io::stdin()
-//            .read_line(&mut operator)
-//            .expect("Failed to read line");
         let operator: &str = operator.trim();
-//
+
         let second_number: String = Input::new()
                                     .with_prompt("Enter your second number")
                                     .interact()
@@ -61,7 +50,5 @@ fn main() {
             let result = &first_number / &second_number;
             println!("{:.2} / {:.2} = {:.2}", first_number, second_number, result);
         }
-
     }
-
 }
